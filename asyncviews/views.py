@@ -7,7 +7,7 @@ async def http_call_async():
         await asyncio.sleep(1)
         print(num)
     async with httpx.AsyncClient() as client:
-        r = await client.get('https://hhtpbin.org')
+        r = await client.get('https://httpbin.org')
         print(r)
 
 
@@ -15,3 +15,5 @@ async def async_view(request):
     loop = asyncio.get_event_loop()
     loop.create_task(http_call_async())
     return HttpResponse('\nSolicitação HTTP sem bloqueio\n')
+
+
